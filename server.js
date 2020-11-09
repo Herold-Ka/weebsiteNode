@@ -14,6 +14,8 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
 
 app.use("/user", require("./router/user"));
+app.use("/article", require("./router/article"));
+app.use("/post", require("./router/post"));
 app.use("/nodemailer", require("./router/nodemailer"));
 
 app.listen(port, () => {

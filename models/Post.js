@@ -1,6 +1,6 @@
 module.exports = (dbinfo, Sequelize) => {
     return dbinfo.define(
-        "Postcommu", {
+        "Post", {
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
@@ -15,6 +15,10 @@ module.exports = (dbinfo, Sequelize) => {
                 AllowNull: false
             },
             commentaire: {
+                type: Sequelize.DataTypes.STRING,
+                AllowNull: false
+            },
+            description: {
                 type: Sequelize.DataTypes.STRING,
                 AllowNull: false
             }

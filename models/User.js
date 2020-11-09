@@ -14,6 +14,10 @@ module.exports = (dbinfo, Sequelize) => {
                 type: Sequelize.DataTypes.STRING(45),
                 allowNull: true
             },
+            pseudo: {
+                type: Sequelize.DataTypes.STRING(45),
+                allowNull: false
+            },
             email: {
                 type: Sequelize.DataTypes.STRING(45),
                 allowNull: false,
@@ -26,6 +30,10 @@ module.exports = (dbinfo, Sequelize) => {
             image: {
                 type: Sequelize.DataTypes.TEXT,
                 allowNull: true
+            },
+            StatusCo: {
+                type: Sequelize.DataTypes.BOOLEAN,
+                allowNull: true,
             },
             Status: {
                 type: Sequelize.DataTypes.BOOLEAN,

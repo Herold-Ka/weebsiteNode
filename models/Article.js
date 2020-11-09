@@ -21,7 +21,11 @@ module.exports = (dbinfo, Sequelize) => {
             description: {
                 type: Sequelize.DataTypes.STRING(35),
                 AllowNull: false
-            }
+            },
+            media:{
+                type: Sequelize.DataTypes.STRING(60),
+                AllowNull: false
+            },
         },
         {
             timestamps: true,
