@@ -1,21 +1,21 @@
 const express = require("express");
 
 const router = express.Router(),
-dotenv = require('dotenv');
+    dotenv = require('dotenv');
 dotenv.config();
 
 router.post("/sendmail", (req, res) => {
     const nodemailer = require("nodemailer");
     var transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: 'mail.domain.fr',
         port: '587',
         auth: {
             user: process.env.WEEB_EMAIL,
             pass: process.env.PASS_EMAIL,
         },
-        secureConnection: 'false',
+        //secureConnection: 'false',
         tls: {
-            ciphers: 'SSLv3',
+            //ciphers: 'SSLv3',
             rejectUnauthorized: false
         }
 
@@ -26,7 +26,7 @@ router.post("/sendmail", (req, res) => {
         subject: req.body.obj,
         text: req.body.text
     }
-    
+
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             res.json(error);
